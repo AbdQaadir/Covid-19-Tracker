@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import Map from "./map.png";
 import "./Countries.css";
@@ -39,7 +39,7 @@ const Countries = ({ countries, selectedCountry, handleClick }) => {
                   </li>
                 );
               }
-              return;
+              return null;
             })}
           </ul>
         </div>

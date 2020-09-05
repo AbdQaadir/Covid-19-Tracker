@@ -43,7 +43,7 @@ class App extends React.Component {
     const { sortedCountries } = this.state;
     console.log(code);
     const selectedCountry = sortedCountries.filter(
-      (country) => country.CountryCode == code
+      (country) => country.CountryCode === code
     );
     console.log(selectedCountry);
     this.setState({

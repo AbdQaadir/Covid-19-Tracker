@@ -25,6 +25,7 @@ const Footer = () => {
             <a
               href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019"
               target="_blank"
+              rel="noopener noreferrer"
             >
               WHO Information
             </a>
@@ -33,6 +34,7 @@ const Footer = () => {
             <a
               href="https://en.wikipedia.org/wiki/Coronavirus_disease_2019"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Covid-19 Wikipedia
             </a>
@@ -41,6 +43,7 @@ const Footer = () => {
             <a
               href="https://www.google.com/search?sxsrf=ALeKk00Kl4RmeLdlf_lxc5ieCcuH8NUvqw%3A1599306203724&ei=23lTX7_pK7TC8gK8oobgDQ&q=world+news+on+covid+19&oq=World+news+on+&gs_lcp=CgZwc3ktYWIQAxgAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADoECAAQRzoECCMQJzoFCAAQkQI6BQgAELEDOgUILhCxAzoICAAQsQMQgwE6CwguEMcBEKMCEJECOgcIABCxAxBDOgQIABBDOgoIABCxAxCDARBDOhEILhCxAxDHARCjAhCRAhCTAjoICC4QsQMQgwE6CwguELEDEIMBEJMCUIy-AVjX1AFg_N4BaABwAXgAgAHrAogB7BqSAQYyLTEyLjKYAQCgAQGqAQdnd3Mtd2l6wAEB&sclient=psy-ab"
               target="_blank"
+              rel="noopener noreferrer"
             >
               World News on Covid-19
             </a>

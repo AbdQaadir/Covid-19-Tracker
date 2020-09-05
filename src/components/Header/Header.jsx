@@ -1,4 +1,6 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import LogoIcon from "./logo-icon.svg";
 import LogoText from "./logo-text.svg";
 
@@ -32,45 +34,53 @@ class Header extends React.Component {
       12: "December",
     };
     return (
-      <div className="row justify-content-start align-items-center py-1 px-5 nav">
-        <div className="col-3">
-          <p className="py-3">
-            <img src={LogoIcon} className=" mr-2" alt="" />
-            <img src={LogoText} className="" alt="" />
-          </p>
-        </div>
+      <Router>
+        <div className="row justify-content-start align-items-center py-1 px-5 nav">
+          <div className="col-3">
+            <p className="py-3">
+              <img src={LogoIcon} className=" mr-2" alt="" />
+              <img src={LogoText} className="" alt="" />
+            </p>
+          </div>
 
-        <div className="col-3">
-          <ul className="list-unstyled nav-ul d-flex">
-            <li
-              className={this.state.activeNav === "HOME" ? "active" : null}
-              onClick={(e) => this.handleActive(e)}
-            >
-              <a href="#">HOME</a>
-            </li>
-            <li
-              className={this.state.activeNav === "SYMPTOMS" ? "active" : null}
-              onClick={(e) => this.handleActive(e)}
-            >
-              <a href="#symptoms">SYMPTOMS</a>
-            </li>
-            <li
-              className={
-                this.state.activeNav === "PROTECTION" ? "active" : null
-              }
-              onClick={(e) => this.handleActive(e)}
-            >
-              <a href="#protection">PROTECTION</a>
-            </li>
-          </ul>
+          <div className="col-3">
+            <ul className="list-unstyled nav-ul d-flex">
+              <li
+                className={this.state.activeNav === "HOME" ? "active" : null}
+                onClick={(e) => this.handleActive(e)}
+              >
+                <Link smooth to="/">
+                  HOME
+                </Link>
+              </li>
+              <li
+                className={
+                  this.state.activeNav === "SYMPTOMS" ? "active" : null
+                }
+                onClick={(e) => this.handleActive(e)}
+              >
+                <Link smooth to="#symptoms">
+                  SYMPTOMS
+                </Link>
+              </li>
+              <li
+                className={
+                  this.state.activeNav === "PROTECTION" ? "active" : null
+                }
+                onClick={(e) => this.handleActive(e)}
+              >
+                <Link to="#protection">PROTECTION</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="col-3">
+            <p className="updated-time">
+              Updated: {matchDate[date.getMonth() + 1] || "MM"}{" "}
+              {date.getDay() || "DD"}, {date.getFullYear() || "YYYY"}
+            </p>
+          </div>
         </div>
-        <div className="col-3">
-          <p className="updated-time">
-            Updated: {matchDate[date.getMonth() + 1] || "MM"}{" "}
-            {date.getDay() || "DD"}, {date.getFullYear() || "YYYY"}
-          </p>
-        </div>
-      </div>
+      </Router>
     );
   }
 }
