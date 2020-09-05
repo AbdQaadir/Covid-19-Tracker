@@ -52,8 +52,8 @@ const Countries = ({ countries, selectedCountry, handleClick }) => {
             <div className="col-5 country-detail">
               <small className="text-muted">Active Cases</small>
               <h6>
-                {selectedCountry.TotalConfirmed -
-                  selectedCountry.TotalRecovered}
+                {/* {selectedCountry.TotalConfirmed -
+                  selectedCountry.TotalRecovered} */}
               </h6>
             </div>
             <div className="col-5 country-detail">

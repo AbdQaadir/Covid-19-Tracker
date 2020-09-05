@@ -11,7 +11,7 @@ const Footer = () => {
           <img src={LogoIcon} alt="" className="mr-2" />
           <img src={LogoText} alt="" />
         </div>
-        <h5 classNamemt="d-block mt-4">Source:</h5>
+        <h5 className="d-block mt-4">Source:</h5>
         <p className="footer-p">
           The infos on this this webpage were crawled from WHO, images were
           downloaded from Pixaybay and Pexels, Icons were downloaded from
