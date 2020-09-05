@@ -7,6 +7,7 @@ import Countries from "./components/Countries/Countries";
 import Symptoms from "./components/Symptoms/Symptoms";
 import Protection from "./components/Protection/Protection";
 import Footer from "./components/Footer/Footer";
+import Loading from "./components/Loading/Loading";
 import "./App.css";
 
 class App extends React.Component {
@@ -17,6 +18,7 @@ class App extends React.Component {
       currentDate: "",
       Global: [],
       selectedCountry: [],
+      loading: true,
     };
   }
   getData = async () => {
@@ -33,6 +35,7 @@ class App extends React.Component {
       currentDate,
       Global,
       selectedCountry,
+      loading: false,
     });
   };
   componentDidMount() {
@@ -50,15 +53,18 @@ class App extends React.Component {
       selectedCountry: selectedCountry[0],
     });
   };
+
   render() {
     const {
       sortedCountries,
       Global,
       currentDate,
       selectedCountry,
+      loading,
     } = this.state;
     return (
       <div className="container-fluid">
+        {loading ? <Loading /> : null}
         <Header currentDate={currentDate} />
 
         <Tracker global={Global} />
