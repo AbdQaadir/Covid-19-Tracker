@@ -20,7 +20,7 @@ class App extends React.Component {
     };
   }
   getData = async () => {
-    const response = await fetch("http://api.covid19api.com/summary");
+    const response = await fetch("https://api.covid19api.com/summary");
     const data = await response.json();
     console.log(data);
     const { Countries, Date: currentDate, Global } = data;
