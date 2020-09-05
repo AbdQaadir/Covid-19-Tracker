@@ -1,0 +1,11 @@
+#protection {
+  background-color: #fff;
+}
+.protection-item {
+  padding: 20px 25px;
+  text-align: center;
+  border: 1px solid #f1f4fa;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: 10px;
+}

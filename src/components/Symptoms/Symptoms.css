@@ -1,0 +1,27 @@
+.symptom-red {
+  font-size: 13px;
+  line-height: 17px;
+  color: #e81454;
+  padding: 11px 20px;
+  background: rgba(232, 20, 84, 0.06);
+  border-radius: 30px;
+}
+.symptom-text {
+  color: #5f6368;
+  font-size: 15px;
+  line-height: 209.6%;
+  text-align: justify;
+}
+.sypmtom-item {
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  padding: 20px 27px;
+  margin: 10px 0;
+}
+
+.sypmtom-item span {
+  display: inline-block;
+  color: #5f6368;
+  padding: 10px 30px 10px 0;
+}

@@ -1,0 +1,29 @@
+.nav {
+  background: #fff;
+}
+a.nav-link {
+  text-transform: capitalize !important;
+  font-size: 16px;
+  opacity: 1;
+}
+.nav-ul li {
+  display: inline;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: 0.3s ease-in-out all;
+}
+.nav-ul li a {
+  text-decoration: none !important;
+  color: black;
+}
+.nav-ul li:hover {
+  color: #2b6ff3;
+}
+.nav-ul li.active a {
+  color: #2b6ff3 !important;
+}
+.updated-time {
+  color: #5f6368;
+  background: rgba(196, 196, 196, 0.12);
+  padding: 10px 15px;
+}

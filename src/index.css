@@ -1,0 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #f3f5f8;
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+}

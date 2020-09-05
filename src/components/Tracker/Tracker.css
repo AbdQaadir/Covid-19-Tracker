@@ -1,0 +1,108 @@
+#tracker-header h1 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+}
+#tracker-body {
+  background: #fff;
+  z-index: -3 !important;
+}
+#tracker-body h1 {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 43px;
+}
+
+#tracker-body .tracter-item:nth-child(1) {
+  background: rgba(43, 111, 243, 0.05);
+  position: relative;
+  z-index: 9999 !important;
+}
+#tracker-body .tracter-item:nth-child(1)::after {
+  content: "";
+  background: rgba(43, 111, 243, 0.05);
+  position: absolute;
+  top: -10px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 0 auto;
+  z-index: -1;
+}
+#tracker-body .tracter-item:nth-child(2) {
+  background: rgba(243, 153, 17, 0.05);
+  position: relative;
+  z-index: 9999 !important;
+}
+#tracker-body .tracter-item:nth-child(2)::after {
+  content: "";
+  background: rgba(243, 153, 17, 0.05);
+  position: absolute;
+  top: -10px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 0 auto;
+  z-index: -1;
+}
+#tracker-body .tracter-item:nth-child(3) {
+  background: rgba(22, 180, 66, 0.05);
+  position: relative;
+  z-index: 9999 !important;
+}
+#tracker-body .tracter-item:nth-child(3)::after {
+  content: "";
+  background: rgba(22, 180, 66, 0.05);
+  position: absolute;
+  top: -10px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 0 auto;
+  z-index: -1;
+}
+#tracker-body .tracter-item:nth-child(4) {
+  background: rgba(170, 42, 42, 0.05);
+  position: relative;
+  z-index: 9999 !important;
+}
+#tracker-body .tracter-item:nth-child(4)::after {
+  content: "";
+  background: rgba(170, 42, 42, 0.05);
+  position: absolute;
+  top: -10px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 0 auto;
+  z-index: -1;
+}
+#tracker-body .tracter-item:nth-child(1) h1 {
+  color: blue !important;
+}
+#tracker-body .tracter-item:nth-child(2) h1 {
+  color: rgb(243, 153, 17);
+}
+#tracker-body .tracter-item:nth-child(3) h1 {
+  color: rgb(22, 180, 66);
+}
+#tracker-body .tracter-item:nth-child(4) h1 {
+  color: rgb(170, 42, 42);
+}
+.tracter-item h5 {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 21px;
+}
