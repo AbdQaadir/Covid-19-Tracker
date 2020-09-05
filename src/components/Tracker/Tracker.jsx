@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Tracker.css";
 const Tracker = ({ countries, global }) => {
-  const {
+  let {
     NewConfirmed,
     TotalConfirmed,
     NewDeaths,
@@ -10,6 +10,7 @@ const Tracker = ({ countries, global }) => {
     NewRecovered,
     TotalRecovered,
   } = global;
+
   return (
     <React.Fragment>
       <div className="row px-5" id="tracker-header">
@@ -21,30 +22,45 @@ const Tracker = ({ countries, global }) => {
         <div className="tracter-item mx-auto px-4 py-2 text-center">
           <h5>Active Cases</h5>
           <h1 className="tracker-figure">
-            {TotalConfirmed - TotalRecovered || "000000"}
+            {(TotalConfirmed - TotalRecovered).toLocaleString() || "000000"}
           </h1>
 
-          <p className="tracker-change">+{NewConfirmed || "000000"}</p>
+          <p className="tracker-change">
+            +{NewConfirmed ? NewConfirmed.toLocaleString() : "000000"}
+          </p>
         </div>
 
         <div className="tracter-item mx-auto px-4 py-2 text-center">
           <h5>Total Cases</h5>
-          <h1 className="tracker-figure">{TotalConfirmed || "000000"}</h1>
+          <h1 className="tracker-figure">
+            {TotalConfirmed ? TotalConfirmed.toLocaleString() : "000000"}
+          </h1>
           <p className="tracker-change">
-            +{NewConfirmed - NewRecovered || "000000"}
+            +
+            {NewConfirmed
+              ? (NewConfirmed - NewRecovered).toLocaleString()
+              : "000000"}
           </p>
         </div>
 
         <div className="tracter-item mx-auto px-4 py-2 text-center">
           <h5>Recovered</h5>
-          <h1 className="tracker-figure">{TotalRecovered || "000000"}</h1>
-          <p className="tracker-change">+{NewRecovered || "000000"}</p>
+          <h1 className="tracker-figure">
+            {TotalRecovered ? TotalRecovered.toLocaleString() : "000000"}
+          </h1>
+          <p className="tracker-change">
+            +{NewRecovered ? NewRecovered.toLocaleString() : "000000"}
+          </p>
         </div>
 
         <div className="tracter-item mx-auto px-4 py-2 text-center">
           <h5>Total Deaths</h5>
-          <h1 className="tracker-figure">{TotalDeaths || "000000"}</h1>
-          <p className="tracker-change">+{NewDeaths || "000000"}</p>
+          <h1 className="tracker-figure">
+            {TotalDeaths ? TotalDeaths.toLocaleString() : "000000"}
+          </h1>
+          <p className="tracker-change">
+            +{NewDeaths ? NewDeaths.toLocaleString() : "000000"}
+          </p>
         </div>
       </div>
     </React.Fragment>
