@@ -6,19 +6,19 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="row justify-content-around" id="footer">
-      <div className="col-xl-3 col-lg-3 col-md-4 col-10">
+      <div className="col-xl-3 col-lg-3 col-md-4 col-10 mb-1">
         <div className="mb-3">
           <img src={LogoIcon} alt="" className="mr-2" />
           <img src={LogoText} alt="" />
         </div>
-        <h5 className="d-block mt-4">Source:</h5>
+        <h5 className="d-block mt-4 text-primary">Source:</h5>
         <p className="footer-p">
           The infos on this this webpage were crawled from WHO, images were
           downloaded from Pixaybay and Pexels, Icons were downloaded from
           Iconfinder and Flaticons.
         </p>
       </div>
-      <div className="col-xl-3 col-lg-3 col-md-4 col-10" id="footer-links">
+      <div className="col-xl-3 col-lg-3 col-md-4 col-10 my-1" id="footer-links">
         <h5 className="text-primary">Useful Links</h5>
         <ul className="mt-2 list-unstyled">
           <li className="my-2">
@@ -50,9 +50,28 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div className="col-xl-3 col-lg-3 col-md-4 col-10">
+      <div className="col-xl-3 col-lg-3 col-md-4 col-10 my-1">
         <h5 className="text-primary">Emergency Numbers to call</h5>
         <p>+2348030000000, 5739 00030300</p>
+      </div>
+      <div className="col-12 text-center">
+        <small className="d-block">
+          Build with <i className="fas fa-heart text-danger"></i> by AbdQaadir
+        </small>
+        <a
+          href="https://twitter.com/Abd_Qaadir"
+          target="_blank"
+          className="social-icon"
+        >
+          <i class="fab fa-twitter-square"></i>
+        </a>
+        <a
+          href="https://github.com/AbdQaadir"
+          target="_blank"
+          className="social-icon"
+        >
+          <i class="fab fa-github-square"></i>
+        </a>
       </div>
     </div>
   );

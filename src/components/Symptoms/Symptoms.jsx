@@ -5,7 +5,7 @@ import Illustration from "./illustration.svg";
 import "./Symptoms.css";
 const Symptoms = () => {
   return (
-    <div className="row mx-5 my-5 pt-3" id="symptoms">
+    <div className="row mx-1 mx-md-3 mx-lg-5 my-5 pt-3" id="symptoms">
       <div className="col-xl-7 col-lg-7 col-md-7 col-12 px-0">
         <span className="symptom-red">Corona Virus Symptoms</span>
         <h1 className="my-3">What are the symptoms?</h1>

@@ -11,7 +11,10 @@ import "./Protection.css";
 
 const Protection = () => {
   return (
-    <div className="row mx-5 my-5 py-5 px-5" id="protection">
+    <div
+      className="row mx-1 mx-md-3 mx-lg-5 my-5 py-5 px-2 px-md-3 px-lg-5"
+      id="protection"
+    >
       <div className="col-xl-6 col-lg-6 col-md-6 d-md-block d-none text-center my-3">
         <img src={Illustration} alt="illustration" className="mx-auto" />
       </div>

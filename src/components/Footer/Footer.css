@@ -28,3 +28,7 @@
 #footer-links li a:hover {
   color: #2b6ff3;
 }
+.social-icon i {
+  font-size: 30px;
+  margin: 10px;
+}

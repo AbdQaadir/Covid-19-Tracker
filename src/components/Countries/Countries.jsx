@@ -4,21 +4,24 @@ import Map from "./map.png";
 import "./Countries.css";
 const Countries = ({ countries, selectedCountry, handleClick }) => {
   return (
-    <div className="bg-white mx-5 px-4 py-5 mt-4">
-      <div className="row  mx-5">
+    <div className="bg-white mx-1 mx-md-3 mx-lg-5 px-0 px-md-5 py-5 mt-4">
+      <div className="row mx-0 mx-md-5">
         <div className="col-12">
           <h1>Top Affected Countries</h1>
         </div>
-        <div className="col-5">
+        <div className="col-5 d-none d-md-block">
           <p>Last Updated</p>
         </div>
-        <div className="col-3">
+        <div className="col-xl-4 col-lg-4 col-md-5 col-12">
           <h5>{selectedCountry.Country}</h5>
         </div>
       </div>
 
-      <div className="row mx-5">
-        <div className="col-4" id="top-coutries">
+      <div className="row mx-1 mx-md-5">
+        <div
+          className="col-xl-4 col-lg-4 col-md-6 col-12 px-2"
+          id="top-coutries"
+        >
           <p className="px-0 mx-0">Countries</p>
 
           <ul className="list-unstyled px-3">
@@ -47,7 +50,7 @@ const Countries = ({ countries, selectedCountry, handleClick }) => {
             })}
           </ul>
         </div>
-        <div className="col-4">
+        <div className="col-xl-4 col-lg-4 col-md-6 col-12 px-2">
           <div className="row">
             <div className="col-5 country-detail">
               <small className="text-muted">Total Cases</small>
@@ -102,8 +105,8 @@ const Countries = ({ countries, selectedCountry, handleClick }) => {
             </div>
           </div>
         </div>
-        <div className="col-4">
-          <img src={Map} alt="map" />
+        <div className="col-xl-4 col-lg-4 d-none d-lg-block">
+          <img src={Map} alt="map" className="country-map" />
         </div>
       </div>
     </div>

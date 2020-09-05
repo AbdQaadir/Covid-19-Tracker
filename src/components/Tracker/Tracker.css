@@ -106,3 +106,38 @@
   font-size: 13px;
   line-height: 21px;
 }
+@media only screen and (max-width: 350px) {
+  .tracter-item {
+    width: 100%;
+    margin: 0 20px;
+  }
+}
+@media only screen and (min-width: 351px) and (max-width: 480px) {
+  .tracter-item {
+    width: 80% !important;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+  .tracter-item {
+    width: 80%;
+    padding: 10px 0 !important;
+    margin: 0 20px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 806px) {
+  .tracter-item {
+    width: 50%;
+    padding: 10px 0 !important;
+    margin: 0 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}

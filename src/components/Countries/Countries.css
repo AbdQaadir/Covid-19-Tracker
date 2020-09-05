@@ -40,3 +40,6 @@
 .active-con {
   background: rgba(238, 238, 238, 0.34);
 }
+.country-map {
+  width: 100%;
+}

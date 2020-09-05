@@ -35,16 +35,16 @@ class Header extends React.Component {
     };
     return (
       <Router>
-        <div className="row justify-content-start align-items-center py-1 px-5 nav">
-          <div className="col-3">
-            <p className="py-3">
+        <div className="row justify-content-center justify-content-md-between align-items-center py-1 px-1 px-md-3 px-lg-5 nav">
+          <div className="col-xl-3 col-lg-4 col-md-4 col-12 text-center">
+            <div className="py-3">
               <img src={LogoIcon} className=" mr-2" alt="" />
               <img src={LogoText} className="" alt="" />
-            </p>
+            </div>
           </div>
 
-          <div className="col-3">
-            <ul className="list-unstyled nav-ul d-flex">
+          <div className="col-xl-3 col-lg-4 col-md-4 col-12  d-none d-md-block">
+            <ul className="list-unstyled nav-ul d-flex align-items-center pt-3">
               <li
                 className={this.state.activeNav === "HOME" ? "active" : null}
                 onClick={(e) => this.handleActive(e)}
@@ -73,11 +73,11 @@ class Header extends React.Component {
               </li>
             </ul>
           </div>
-          <div className="col-3">
-            <p className="updated-time">
+          <div className="col-xl-3 col-lg-4 col-md-4 col-10 text-center text-md-right py-3 py-md-0">
+            <span className="updated-time mr-auto">
               Updated: {matchDate[date.getMonth() + 1] || "MM"}{" "}
               {date.getDay() || "DD"}, {date.getFullYear() || "YYYY"}
-            </p>
+            </span>
           </div>
         </div>
       </Router>
