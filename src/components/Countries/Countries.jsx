@@ -35,7 +35,11 @@ const Countries = ({ countries, selectedCountry, handleClick }) => {
                     onClick={() => handleClick(`${country.CountryCode}`)}
                   >
                     <h6>{country.Country}</h6>
-                    <h6 className="text-primary">{country.TotalConfirmed}</h6>
+                    <h6 className="text-primary">
+                      {country.TotalConfirmed
+                        ? country.TotalConfirmed.toLocaleString()
+                        : "000000"}
+                    </h6>
                   </li>
                 );
               }
@@ -47,30 +51,54 @@ const Countries = ({ countries, selectedCountry, handleClick }) => {
           <div className="row">
             <div className="col-5 country-detail">
               <small className="text-muted">Total Cases</small>
-              <h6>{selectedCountry.TotalConfirmed}</h6>
+              <h6>
+                {selectedCountry.TotalConfirmed
+                  ? selectedCountry.TotalConfirmed.toLocaleString()
+                  : "0000000"}
+              </h6>
             </div>
             <div className="col-5 country-detail">
               <small className="text-muted">Active Cases</small>
               <h6>
-                {/* {selectedCountry.TotalConfirmed -
-                  selectedCountry.TotalRecovered} */}
+                {selectedCountry.TotalConfirmed
+                  ? (
+                      selectedCountry.TotalConfirmed -
+                      selectedCountry.TotalRecovered
+                    ).toLocaleString()
+                  : "000000"}
               </h6>
             </div>
             <div className="col-5 country-detail">
               <small className="text-muted">Recovered</small>
-              <h6>{selectedCountry.TotalRecovered}</h6>
+              <h6>
+                {selectedCountry.TotalRecovered
+                  ? selectedCountry.TotalRecovered.toLocaleString()
+                  : "000000"}
+              </h6>
             </div>
             <div className="col-5 country-detail">
               <small className="text-muted">Total Deaths</small>
-              <h6>{selectedCountry.TotalDeaths}</h6>
+              <h6>
+                {selectedCountry.TotalDeaths
+                  ? selectedCountry.TotalDeaths.toLocaleString()
+                  : "000000"}
+              </h6>
             </div>
             <div className="col-5 country-detail">
               <small className="text-muted">New Cases</small>
-              <h6>{selectedCountry.NewConfirmed}</h6>
+              <h6>
+                {selectedCountry.NewConfirmed
+                  ? selectedCountry.NewConfirmed.toLocaleString()
+                  : "000000"}
+              </h6>
             </div>
             <div className="col-5 country-detail">
               <small className="text-muted">New Deaths </small>
-              <h6>{selectedCountry.NewDeaths}</h6>
+              <h6>
+                {selectedCountry.NewDeaths
+                  ? selectedCountry.NewDeaths.toLocaleString()
+                  : "000000"}
+              </h6>
             </div>
           </div>
         </div>
