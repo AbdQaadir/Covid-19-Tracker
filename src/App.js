@@ -24,7 +24,7 @@ class App extends React.Component {
   getData = async () => {
     const response = await fetch("https://api.covid19api.com/summary");
     const data = await response.json();
-    console.log(data);
+
     const { Countries, Date: currentDate, Global } = data;
     const sortedCountries = Countries.sort(
       (a, b) => parseFloat(b.TotalConfirmed) - parseFloat(a.TotalConfirmed)
@@ -44,11 +44,9 @@ class App extends React.Component {
 
   handleClick = (code) => {
     const { sortedCountries } = this.state;
-    console.log(code);
     const selectedCountry = sortedCountries.filter(
       (country) => country.CountryCode === code
     );
-    console.log(selectedCountry);
     this.setState({
       selectedCountry: selectedCountry[0],
     });

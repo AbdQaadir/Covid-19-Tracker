@@ -64,7 +64,7 @@ const Footer = () => {
           className="social-icon"
           rel="noopener noreferrer"
         >
-          <i class="fab fa-twitter-square"></i>
+          <i className="fab fa-twitter-square"></i>
         </a>
         <a
           href="https://github.com/AbdQaadir"
@@ -72,7 +72,7 @@ const Footer = () => {
           className="social-icon"
           rel="noopener noreferrer"
         >
-          <i class="fab fa-github-square"></i>
+          <i className="fab fa-github-square"></i>
         </a>
       </div>
     </div>

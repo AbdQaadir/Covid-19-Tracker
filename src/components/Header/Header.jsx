@@ -76,7 +76,7 @@ class Header extends React.Component {
           <div className="col-xl-3 col-lg-4 col-md-4 col-10 text-center text-md-right py-3 py-md-0">
             <span className="updated-time mr-auto">
               Updated: {matchDate[date.getMonth() + 1] || "MM"}{" "}
-              {date.getDay() || "DD"}, {date.getFullYear() || "YYYY"}
+              {date.getDate() || "DD"}, {date.getFullYear() || "YYYY"}
             </span>
           </div>
         </div>
