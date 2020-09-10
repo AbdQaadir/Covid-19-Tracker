@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 // Components
 import Header from "./components/Header/Header";
 import Tracker from "./components/Tracker/Tracker";
@@ -10,77 +10,70 @@ import Footer from "./components/Footer/Footer";
 import Loading from "./components/Loading/Loading";
 import "./App.css";
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      sortedCountries: [],
-      currentDate: "",
-      Global: [],
-      selectedCountry: [],
-      loading: true,
-    };
-  }
-  getData = async () => {
-    const response = await fetch("https://api.covid19api.com/summary");
-    const data = await response.json();
+const initialState = {
+  sortedCountries: [],
+  currentDate: "",
+  Global: [],
+  selectedCountry: [],
+  loading: true,
+};
 
-    const { Countries, Date: currentDate, Global } = data;
-    const sortedCountries = Countries.sort(
-      (a, b) => parseFloat(b.TotalConfirmed) - parseFloat(a.TotalConfirmed)
-    );
-    const selectedCountry = sortedCountries[0];
-    this.setState({
-      sortedCountries,
-      currentDate,
-      Global,
-      selectedCountry,
-      loading: false,
+const App = () => {
+  const [covidState, setCovidState] = useState(initialState);
+
+  useEffect(() => {
+    axios.get("https://api.covid19api.com/summary").then((response) => {
+      const { data } = response;
+      const { Countries, Date: currentDate, Global } = data;
+      const sortedCountries = Countries.sort(
+        (a, b) => parseFloat(b.TotalConfirmed) - parseFloat(a.TotalConfirmed)
+      );
+      const selectedCountry = sortedCountries[0];
+      setCovidState({
+        sortedCountries,
+        currentDate,
+        Global,
+        selectedCountry,
+        loading: false,
+      });
     });
-  };
-  componentDidMount() {
-    this.getData();
-  }
+  }, []);
 
-  handleClick = (code) => {
-    const { sortedCountries } = this.state;
+  const handleClick = (code) => {
+    const { sortedCountries } = covidState;
     const selectedCountry = sortedCountries.filter(
       (country) => country.CountryCode === code
     );
-    this.setState({
-      selectedCountry: selectedCountry[0],
-    });
+    setCovidState({ ...covidState, selectedCountry: selectedCountry[0] });
   };
 
-  render() {
-    const {
-      sortedCountries,
-      Global,
-      currentDate,
-      selectedCountry,
-      loading,
-    } = this.state;
-    return (
-      <div className="container-fluid">
-        {loading ? <Loading /> : null}
-        <Header currentDate={currentDate} />
+  const {
+    sortedCountries,
+    Global,
+    currentDate,
+    selectedCountry,
+    loading,
+  } = covidState;
+  return (
+    <div className="container-fluid">
+      {loading ? <Loading /> : null}
+      <Header currentDate={currentDate} />
 
-        <Tracker global={Global} />
+      <Tracker global={Global} />
 
-        <Countries
-          countries={sortedCountries}
-          selectedCountry={selectedCountry}
-          handleClick={this.handleClick}
-        />
+      <Countries
+        countries={sortedCountries}
+        selectedCountry={selectedCountry}
+        handleClick={handleClick}
+      />
 
-        <Symptoms />
+      <Symptoms />
 
-        <Protection />
+      <Protection />
 
-        <Footer />
-      </div>
-    );
-  }
-}
+      <Footer />
+    </div>
+  );
+};
 
 export default App;

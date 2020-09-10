@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./Tracker.css";
-const Tracker = ({ countries, global }) => {
+const Tracker = ({ global }) => {
   let {
     NewConfirmed,
     TotalConfirmed,
