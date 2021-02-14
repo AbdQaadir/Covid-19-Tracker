@@ -121,3 +121,10 @@
     font-size: 18px;
   }
 }
+
+#error-message {
+  font-size: 20px;
+  width: 100%;
+  margin: 10vh auto;
+  text-align: center;
+}

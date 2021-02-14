@@ -20,23 +20,32 @@ const initialState = {
 
 const App = () => {
   const [covidState, setCovidState] = useState(initialState);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    axios.get("https://api.covid19api.com/summary").then((response) => {
-      const { data } = response;
-      const { Countries, Date: currentDate, Global } = data;
-      const sortedCountries = Countries.sort(
-        (a, b) => parseFloat(b.TotalConfirmed) - parseFloat(a.TotalConfirmed)
-      );
-      const selectedCountry = sortedCountries[0];
-      setCovidState({
-        sortedCountries,
-        currentDate,
-        Global,
-        selectedCountry,
-        loading: false,
+    axios
+      .get("https://api.covid19api.com/summary")
+      .then((response) => {
+        const { data } = response;
+        const { Countries, Date: currentDate, Global } = data;
+        const sortedCountries = Countries.sort(
+          (a, b) => parseFloat(b.TotalConfirmed) - parseFloat(a.TotalConfirmed)
+        );
+        const selectedCountry = sortedCountries[0];
+        setCovidState({
+          sortedCountries,
+          currentDate,
+          Global,
+          selectedCountry,
+          loading: false,
+        });
+      })
+      .catch((err) => {
+        setError(err.message);
+        setTimeout(() => {
+          setError("");
+        }, 3000);
       });
-    });
   }, []);
 
   const handleClick = (code) => {
@@ -57,21 +66,28 @@ const App = () => {
   return (
     <div className="container-fluid">
       {loading ? <Loading /> : null}
-      <Header currentDate={currentDate} />
+      {error ? <h3>{error}</h3> : null}
+      {!error && !loading ? (
+        <>
+          <Header currentDate={currentDate} />
 
-      <Tracker global={Global} />
+          <Tracker global={Global} />
 
-      <Countries
-        countries={sortedCountries}
-        selectedCountry={selectedCountry}
-        handleClick={handleClick}
-      />
+          <Countries
+            countries={sortedCountries}
+            selectedCountry={selectedCountry}
+            handleClick={handleClick}
+          />
 
-      <Symptoms />
+          <Symptoms />
 
-      <Protection />
+          <Protection />
 
-      <Footer />
+          <Footer />
+        </>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
