@@ -22,7 +22,8 @@ const App = () => {
   const [covidState, setCovidState] = useState(initialState);
   const [error, setError] = useState("");
 
-  useEffect(() => {
+  const fetchData = () => {
+    setError("");
     axios
       .get("https://api.covid19api.com/summary")
       .then((response) => {
@@ -41,11 +42,18 @@ const App = () => {
         });
       })
       .catch((err) => {
+        setCovidState((previousState) => ({
+          ...previousState,
+          loading: false,
+        }));
         setError(err.message);
         setTimeout(() => {
           setError("");
         }, 3000);
       });
+  };
+  useEffect(() => {
+    fetchData();
   }, []);
 
   const handleClick = (code) => {
@@ -65,8 +73,8 @@ const App = () => {
   } = covidState;
   return (
     <div className="container-fluid">
-      {loading ? <Loading /> : null}
-      {error ? <h3>{error}</h3> : null}
+      {loading && !error ? <Loading /> : null}
+      {error && !loading ? <h3 id="error-message">{error}</h3> : null}
       {!error && !loading ? (
         <>
           <Header currentDate={currentDate} />
